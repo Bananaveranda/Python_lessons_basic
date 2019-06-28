@@ -44,8 +44,7 @@ i = 0
 while i < len(list_2):
     if not list_1[i] in list_2:
         new_list.append(list_1[i])
-    else:
-        break
+    i+=1
 print('{} уникальный список из {}, очищенный от списка {}'.format(new_list, list_1, list_2))
 
 # Задача-3:
