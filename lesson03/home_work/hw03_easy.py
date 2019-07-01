@@ -4,14 +4,23 @@
 # Округление должно происходить по математическим правилам (0.6 --> 1, 0.4 --> 0).
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
+#def my_round(number, ndigits):
+#    pass
+
+#print(my_round(2.1234567, 5))
+#print(my_round(2.1999967, 5))
+#print(my_round(2.9999967, 5))
+
 def my_round(number, ndigits):
-    pass
-
-
+    num = number*(10**ndigits)
+    if num%1 >= 0.5:
+        num2 = (int(num)+1)/(10**ndigits)
+    else:
+        num2 = int(num)/(10**ndigits)
+    return "{:.{}f}".format(num2, ndigits)
 print(my_round(2.1234567, 5))
 print(my_round(2.1999967, 5))
 print(my_round(2.9999967, 5))
-
 
 # Задание-2:
 # Дан шестизначный номер билета. Определить, является ли билет счастливым.
@@ -19,9 +28,18 @@ print(my_round(2.9999967, 5))
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
-def lucky_ticket(ticket_number):
-    pass
+#def lucky_ticket(ticket_number):
+#    pass
 
+#print(lucky_ticket(123006))
+#print(lucky_ticket(12321))
+#print(lucky_ticket(436751))
+
+def lucky_ticket(ticket_number):
+    num = [int(itm) for itm in str(ticket_number)]
+    if len(num)==6:
+        if sum(num[:3])==sum(num[-3:]):
+                return str("Lucky winner of ticket {}".format(ticket_number))
 
 print(lucky_ticket(123006))
 print(lucky_ticket(12321))
