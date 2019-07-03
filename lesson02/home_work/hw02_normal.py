@@ -5,6 +5,26 @@
 # если такой корень вообще можно извлечь
 # Пример: Дано: [2, -5, 8, 9, -25, 25, 4]   Результат: [3, 5, 2]
 
+import math
+import random
+
+list_1 = []
+for i in range(10):
+    element = random.randint(-100,100)
+    list_1.append(element)
+
+new_list = []
+
+for i in list_1:
+    if i > 0 and math.sqrt(i) % 1 == 0:
+        new_list.append(int(math.sqrt(i)))
+        
+if len(new_list) == 0:
+    print('Исходный список {} не имеет челых чисел из извлекаемого квадратного корня'.format(list_1))
+else:
+    print('{} -- список, извлеченный из квадратных корней списка {}'.format(new_list, list_1))
+    
+    
 
 # Задача-2: Дана дата в формате dd.mm.yyyy, например: 02.11.2013.
 # Ваша задача вывести дату в текстовом виде, например: второе ноября 2013 года.
@@ -16,10 +36,36 @@
 # Подсказка:
 # для получения случайного числа используйте функцию randint() модуля random
 
+import random
+new_list = []
+n = int(input("Введите количество элементов списка "))
+for i in range(n):
+    element = random.randint(-100,100)
+    new_list.append(element)
+print('Сгенерированный список: ', new_list)
+
+#vol.2
+
+import random
+
+n = int(input("Введите количество элементов списка "))
+new_list = [random.randint(-100,100) for i in range(n)]
+print('Сгенерированный список: ', new_list)
 
 # Задача-4: Дан список, заполненный произвольными целыми числами.
 # Получите новый список, элементами которого будут: 
 # а) неповторяющиеся элементы исходного списка:
 # например, lst = [1, 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 2, 4, 5, 6]
+
+import random
+list_1 = [random.randint(1,10) for i in range(10)]
+list_2 = list(set(list_1))
+print(list_2 , ' -- неповторяющиеся элементы исходного списка ', list_1)
+
 # б) элементы исходного списка, которые не имеют повторений:
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
+
+import random
+list_1 = [random.randint(1,10) for i in range(10)]
+list_2 = [i for i in list_1 if list_1.count(i) == 1]
+print('{} -- элементы исходного списка {}, не имеющие повторений. '.format(list_2 , list_1))
