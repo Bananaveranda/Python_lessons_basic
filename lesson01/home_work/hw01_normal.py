@@ -25,3 +25,19 @@ __author__ = 'Ваши Ф.И.О.'
 # Для вычисления квадратного корня воспользуйтесь функцией sqrt() модуля math:
 # import math
 # math.sqrt(4) - вычисляет корень числа 4
+import math
+a = float(input("Давайте решим квадратное уравнение вида ax^2 + bx + c = 0. Введите число a = "))
+b = float(input("Введите число b = "))
+c = float(input("Введите число c = "))
+
+discr = b ** 2 - 4 * a * c #             дискриминант
+
+if discr > 0:
+    x1 = (-b + math.sqrt(discr)) / (2 * a)
+    x2 = (-b - math.sqrt(discr)) / (2 * a)
+    print("Первый корень: ", x1, "\nВторой корень: ", x2)
+elif discr = 0:
+    x = -b / (2 * a)
+    print("Корень: ", x)
+else:
+    print("Корней нет")
