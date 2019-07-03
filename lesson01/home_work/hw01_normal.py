@@ -36,7 +36,7 @@ if discr > 0:
     x1 = (-b + math.sqrt(discr)) / (2 * a)
     x2 = (-b - math.sqrt(discr)) / (2 * a)
     print("Первый корень: ", x1, "\nВторой корень: ", x2)
-elif discr = 0:
+elif discr == 0:
     x = -b / (2 * a)
     print("Корень: ", x)
 else:
