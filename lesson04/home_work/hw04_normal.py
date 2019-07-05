@@ -26,11 +26,19 @@ print(result)
 
 #без re
 
-line2 =[]
+line2 = []
+str = ""
 for idx, itm in enumerate(line,start=0):
     if itm.islower():
-        line2.append(itm)
+        str += itm
+    else:
+        if len(str)>0:
+            line2.append(str)
+            str = ""
+if len(str)>0:
+    line2.append(str)
 print(line2)
+
 
 
 # Задание-2:
